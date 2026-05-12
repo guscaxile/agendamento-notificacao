@@ -13,7 +13,7 @@ public interface IAgendamentoMapper {
 
     Agendamento paraEntity(AgendamentoRecord agendamento);
     AgendamentoRecordOut paraOut(Agendamento agendamento);
-    @Mapping(target = "dataHoraModificacao", expression = "java(LocalDateTime.now())")
-    @Mapping(target = "StatusNotificacao", expression = "java(StatusNotificacaoEnum.CANCELADO")
+    @Mapping(target = "dataHoraModificacao", expression = "java(java.time.LocalDateTime.now())")
+    @Mapping(target = "statusNotificacao", expression = "java(com.desafio_magalu.agendamento_notificacao_api.infrastructure.enums.StatusNotificacaoEnum.CANCELADO)")
     Agendamento paraEntityCancelamento(Agendamento agendamento);
 }
